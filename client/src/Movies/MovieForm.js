@@ -5,7 +5,7 @@ const MovieForm = props => {
 
     console.log('formprops', props);
     // console.log('form id', props.match.params.id);
-    const [movieInfo, setMovieInfo] = useState({id: `${props.match.params.id}`, title: '', director: '', metascore: '', stars: []});
+    const [movieInfo, setMovieInfo] = useState({id: parseInt(`${props.match.params.id}`), title: '', director: '', metascore: '', stars: []});
     // const [stars, setStars] = useState([]);
 
 

@@ -23,7 +23,7 @@ const MovieForm = props => {
         axios.put(`http://localhost:5000/api/movies/${props.match.params.id}/`, movieInfo)
             .then(res => {
                 console.log('put response', res)
-                props.history.push('/movies');
+                props.history.push('/');
                 //push history from here
             })
             .catch(err => console.error('put error', err))

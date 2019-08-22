@@ -50,6 +50,9 @@ export default class Movie extends React.Component {
             Edit
           </div>
         </Link>
+        <div className="delete-button">
+            Delete
+        </div>
       </>
     );
   }

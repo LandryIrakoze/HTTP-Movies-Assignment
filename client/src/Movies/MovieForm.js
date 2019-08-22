@@ -3,11 +3,9 @@ import axios from 'axios';
 
 const MovieForm = props => {
 
+    //MAKE IT AUTOFILL THE INFO COMING IN, IN THE USESTATE
     console.log('formprops', props);
-    // console.log('form id', props.match.params.id);
     const [movieInfo, setMovieInfo] = useState({id: parseInt(`${props.match.params.id}`), title: '', director: '', metascore: '', stars: []});
-    // const [stars, setStars] = useState([]);
-
 
     const handleChange = event => {
         setMovieInfo({...movieInfo, [event.target.name]: event.target.value })
@@ -25,6 +23,7 @@ const MovieForm = props => {
         axios.put(`http://localhost:5000/api/movies/${props.match.params.id}/`, movieInfo)
             .then(res => {
                 console.log('put response', res)
+                props.history.push('/movies');
                 //push history from here
             })
             .catch(err => console.error('put error', err))
